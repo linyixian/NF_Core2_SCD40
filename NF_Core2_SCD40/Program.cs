@@ -49,13 +49,14 @@ namespace NF_Core2_SCD40
             var tmp = -45 + 175 * (float)(BinaryPrimitives.ReadUInt16BigEndian(buffer.Slice(3, 3))) / 65536;
             var hum = 100 * (float)(BinaryPrimitives.ReadUInt16BigEndian(buffer.Slice(6, 3))) / 65536;
 
+            Console.Clear() ;
             Console.CursorTop = 1;
             Console.CursorLeft = 0;
             Console.Write("Co2 : ");
             Console.WriteLine(co2.ToString());
             Console.Write("Tempreture : ");
             Console.WriteLine(tmp.ToString("F2"));
-            Console.Write("Hummidty : ");
+            Console.Write("Humidity : ");
             Console.WriteLine(hum.ToString("F2"));
 
             //アップロード用データ
